@@ -119,6 +119,8 @@ http {
 		listen $(PORT) ssl;
 
 		ssl                  on;
+		ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+		ssl_ciphers "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:EXPORT";
 		ssl_certificate      cert.crt;
 		ssl_certificate_key  cert.key;
 
