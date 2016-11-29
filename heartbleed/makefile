@@ -15,6 +15,7 @@ clean:
 	rm -Rf openssl nginx nginx.conf cert.crt cert.key openssl-1.0.1f  nginx-1.5.12 logs
 
 prereq:
+	apt-get update
 	apt-get install build-essential libpcre3-dev zlib1g-dev -y
 
 cert.crt: cert.key
@@ -114,17 +115,8 @@ http {
 	default_type  text/html;
 	log_not_found off;
 
-	sendfile   on;
-	tcp_nopush on;
-
-	client_body_buffer_size 8k;
-	client_body_in_single_buffer on;
-	client_body_temp_path /tmp/client_body_temp;
-	client_max_body_size 7k;
-
 	server {
 		listen $(PORT) ssl;
-		error_page 497 https://$$host:$$server_port$$request_uri;
 
 		ssl                  on;
 		ssl_certificate      cert.crt;
