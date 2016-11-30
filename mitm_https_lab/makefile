@@ -84,7 +84,7 @@ http {
 		charset utf-8;
 
 		location / {
-			root heartbleedroot;
+			root /var/www/html;
 			index index.html;
 		}
 	}

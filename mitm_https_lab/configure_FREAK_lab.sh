@@ -1,5 +1,11 @@
-#!/bin/bash
-echo "Run the following script as root only. "
+echo "Copy paste commands as needed. You need to be root to run all this commands"
+echo "uncomment the commands that need to be run"
+
+echo "git clone the repo"
+
+git clone https://github.com/LeenAlShenibr/EC521_project
+
+
 echo "enabling ssh access to VM and making it persistent"
 #/usr/sbin/update-rc.d -f ssh remove
 #/usr/sbin/update-rc.d -f ssh defaults
@@ -40,6 +46,12 @@ echo "Start nginx server "
 /bin/systemctl status nginx
 
 
+Assuming you have already git cloned the repo
+
+https://github.com/LeenAlShenibr/EC521_project
+
+
 echo "place index.html and mitm_index.html at /var/www/html"
+
 
 
