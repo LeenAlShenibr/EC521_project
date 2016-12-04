@@ -29,7 +29,7 @@ echo " in /etc/sysctl.conf "
 echo "Setting iptable rules to redirect all incoming traffic to port 80 and 443 to port 8080 "
 echo "mitmproxy bydefault listens to port 8080 "
 
-#/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 443 -j REDIRECT --to-port 8080
+#/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 45373 -j REDIRECT --to-port 8080
 #/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 80 -j REDIRECT --to-port 8080
 
 echo "To check if the rules have set correctly"
