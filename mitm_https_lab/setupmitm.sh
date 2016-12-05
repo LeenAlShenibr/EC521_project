@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Place the script in /usr/local/sbin
 #Following script manipulates the IPtables to set rules that lets you
 #interact with the webserver (http and https) with or without mitmproxy
 
@@ -17,9 +18,9 @@ where:
      -q		Queries the iptables to show the active rules. 
 
 Example:
-	./setupmitm.sh -i # will route all packets to http or https server via mitmproxy
-	./setupmitm.sh -d # will stop routing packets via mitmproxy
-	./setupmitm.sh -q # will let you query the iptable rules currently set. 
+	setupmitm.sh -i # will route all packets to http or https server via mitmproxy
+	setupmitm.sh -d # will stop routing packets via mitmproxy
+	setupmitm.sh -q # will let you query the iptable rules currently set. 
 "
 
 while getopts ':hidq' option; do
