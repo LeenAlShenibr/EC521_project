@@ -19,7 +19,7 @@ cert.crt: cert.key
 cert.key:
 	cd /usr/local/ssl && \
 	rm -Rf '$@' && \
-	openssl req -x509 -newkey rsa:2048 -nodes -days 7 -keyout cert.key -out cert.crt -extensions v3_req -subj '/C=US/O=EC521/OU=Heartbleed/CN=$(HOSTNAME)' && \
+	openssl req -x509 -newkey rsa:2048 -nodes -days 7 -keyout cert.key -out cert.crt -extensions v3_req -subj '/C=US/O=EC521/OU="Have you seen Zebras ? There is no man-in-the-middle"/CN=$(HOSTNAME)' && \
 	chmod go-wx '$@' && \
 	chmod a+r '$@'  # Server process needs to be able to read this.
 	cp /usr/local/ssl/cert.crt /usr/local/ssl/cert.key $(PWD)/
@@ -85,7 +85,7 @@ http {
 
 		location / {
 			root /var/www/html;
-			index index.html;
+			index https_index.html;
 		}
 	}
 }
