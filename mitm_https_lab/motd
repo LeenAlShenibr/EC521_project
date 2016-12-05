@@ -1,0 +1,27 @@
+
+ ****  WELCOME TO THE HTTPS VULNERABILITIES LAB **** 
+   -- By Group 8: Sahil Tikale, Leen AlShenibr, Chang Yan
+
+This VM has a http nginx webserver running at port 80
+The secure nginx (https) server is listening on port 45373 
+
+To initiate the man-in-middle-attack, use command 
+setupmitm -i; mitmproxy -T --host
+Once done, exit mitmproxy. 
+To resume access to http and https server without mitmproxy run: 
+setupmitm -d 
+
+At anytime if you wish to query the iptable rules run:
+setupmitm -q
+
+"----- HAVE FUN WITH THE LAB ----"
+
+
+The programs included with the Kali GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+
+
