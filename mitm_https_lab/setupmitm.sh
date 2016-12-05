@@ -31,6 +31,8 @@ while getopts ':hidq' option; do
     i)	echo "man-in-the-middle attack intiated"
 	echo "To intercept http, https connections start mitmproxy by running... "
 	echo "mitmproxy -T --host" 
+	/sbin/iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 45373 -j REDIRECT --to-port 8080
+	/sbin/iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
 	/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 45373 -j REDIRECT --to-port 8080
 	/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 80 -j REDIRECT --to-port 8080
 
